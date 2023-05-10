@@ -1,0 +1,202 @@
+1/mongod: Starts the MongoDB server.
+
+2/mongo: Starts the MongoDB shell, which allows you to interact with the database.
+
+3/show dbs: Lists all available databases.
+
+4/use <database_name>: Switches to the specified database. If the database doesn't exist, it will be created when you insert data.
+
+5/db: Displays the current database you are working with.
+
+6/show collections: Lists all collections (tables) in the current database.
+
+7/db.createCollection("<collection_name>"): Creates a new collection in the current database.
+
+8/db.<collection_name>.insert(<document>): Inserts a new document (record) into the specified collection.
+
+9/db.<collection_name>.find(): Retrieves all documents from the specified collection.
+
+10/db.<collection_name>.find(<query>): Retrieves documents from the specified collection that match the given query.
+
+11/db.<collection_name>.findOne(<query>): Retrieves one document from the specified collection that matches the given query.
+
+12/db.<collection_name>.update(<query>, <update>, <options>): Updates documents in the specified collection based on the provided query, update, and options.
+
+13/db.<collection_name>.remove(<query>, <options>): Removes documents from the specified collection based on the provided query and options.
+
+14/db.<collection_name>.drop(): Drops (deletes) the specified collection.
+
+15/db.dropDatabase(): Drops (deletes) the current database.
+///////////////////////////////////////////////////////////////////////////////////////////
+16/db.<collection_name>.find().pretty(): Retrieves all documents from the specified collection and displays them in a more readable format.
+
+17/db.<collection_name>.count(): Returns the number of documents in the specified collection.
+
+18/db.<collection_name>.distinct("<field>"): Retrieves distinct values of a specified field from the collection.
+
+19/db.<collection_name>.find().sort(<sort_criteria>): Retrieves documents from the specified collection and sorts them based on the provided criteria.
+
+20/db.<collection_name>.find().limit(<number>): Retrieves a specified number of documents from the collection.
+
+21/db.<collection_name>.find().skip(<number>): Skips a specified number of documents from the collection while retrieving data.
+
+22/db.<collection_name>.aggregate(<pipeline>): Performs aggregation operations on the specified collection using a pipeline of stages.
+
+23/db.<collection_name>.createIndex(<index_definition>, <options>): Creates an index on the specified collection based on the provided index definition and options.
+
+24/db.<collection_name>.getIndexes(): Lists all indexes for the specified collection.
+
+25/db.<collection_name>.dropIndex(<index_name>): Drops (deletes) the specified index from the collection.
+
+26/db.<collection_name>.renameCollection("<new_collection_name>"): Renames the specified collection to a new name.
+
+27/db.<collection_name>.stats(): Retrieves statistics about the specified collection.
+
+28/db.runCommand(<command>): Executes a MongoDB database command. This can be used to run commands that are not available as direct shell methods.
+
+29/db.getSiblingDB("<database_name>"): Gets a reference to another database on the same MongoDB server without switching the current database in the shell.
+
+30db.copyDatabase("<from_db>", "<to_db>", "<from_host>"): Copies a database from one name to another or from one server to another.
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+31/db.<collection_name>.find(<query>).count(): Retrieves the count of documents from the specified collection that match the given query.
+
+32/db.<collection_name>.find().sort(<sort_criteria>).limit(<number>): Retrieves documents from the specified collection, sorts them based on the provided criteria, and limits the result to a specified number of documents.
+
+33/db.<collection_name>.find().skip(<number>).limit(<number>): Retrieves documents from the specified collection, skips a specified number of documents, and limits the result to a specified number of documents.
+
+34/db.<collection_name>.updateMany(<filter>, <update>, <options>): Updates multiple documents in the specified collection based on the provided filter, update, and options.
+
+35/db.<collection_name>.replaceOne(<filter>, <replacement>, <options>): Replaces a single document within the specified collection based on the provided filter, replacement document, and options.
+
+36/db.<collection_name>.deleteOne(<filter>, <options>): Deletes a single document from the specified collection based on the provided filter and options.
+
+37/db.<collection_name>.deleteMany(<filter>, <options>): Deletes multiple documents from the specified collection based on the provided filter and options.
+
+38/db.<collection_name>.bulkWrite(<operations>, <options>): Performs multiple write operations (insert, update, delete) in the specified collection with a single command.
+
+39/db.<collection_name>.watch(<pipeline>, <options>): Opens a change stream cursor for the specified collection to watch for real-time changes in the data.
+
+40/db.getCollectionInfos(<filter>): Returns information about all collections in the current database or specific collections based on the provided filter.
+
+41/db.getProfilingStatus(): Retrieves the current profiling status for the database.
+
+42/db.setProfilingLevel(<level>, <options>): Sets the profiling level for the database.
+
+43/db.system.profile.find(): Queries the system.profile collection, which stores information about slow queries and other database operations when profiling is enabled.
+
+44/db.createUser(<user>): Creates a new user in the current database with the specified authentication and authorization settings.
+
+45/db.updateUser(<username>, <options>): Updates an existing user's settings in the current database.
+§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+46/db.<collection_name>.find(<query>).explain(<verbosity>): Retrieves the query plan for the specified query, helping you analyze the performance and execution strategy.
+
+47/db.<collection_name>.findAndModify(<params>): Retrieves and modifies a single document in the specified collection, atomically.
+
+48/db.<collection_name>.mapReduce(<map_function>, <reduce_function>, <options>): Performs a map-reduce operation on the specified collection to process and aggregate data.
+
+49/db.<collection_name>.aggregate(<pipeline>, <options>): Performs aggregation operations on the specified collection using a pipeline of stages with additional options.
+
+50/db.getCollectionNames(): Retrieves an array of all collection names in the current database.
+
+51/db.isMaster(): Retrieves information about the MongoDB server's role, such as whether it is a primary or secondary node in a replica set.
+
+52/db.printReplicationInfo(): Displays information about the oplog, which contains the history of operations in a replica set.
+
+53/db.printShardingStatus(): Displays information about sharding configuration and the current state of a sharded cluster.
+
+54/db.runCommand({ping: 1}): Pings the MongoDB server to check its status and responsiveness.
+
+55/db.shutdownServer(<options>): Shuts down the MongoDB server with optional force and timeout options.
+
+56/db.stats(<scale>): Retrieves database statistics, with an optional scale factor for storage size values.
+
+57/db.getFreeMonitoringStatus(): Retrieves the status of free monitoring for the MongoDB deployment.
+
+58/db.enableFreeMonitoring(): Enables free monitoring for the MongoDB deployment.
+
+59/db.disableFreeMonitoring(): Disables free monitoring for the MongoDB deployment.
+
+60db.getRoles(<options>): Retrieves information about all roles in the current database, with optional filter options.
+////////////////////////////////////////////////////////////////////////////////////////
+61/db.loadServerScripts(): Loads all stored server-side JavaScript functions for the current database.
+
+62/db.eval(<function>, <arguments>): Runs a JavaScript function on the MongoDB server with the specified arguments. Note that this command is deprecated and should be avoided when possible.
+
+63/db.getLastError(<options>): Retrieves the error message from the last operation on the current connection.
+
+64/db.getPrevError(<options>): Retrieves the error message from the previous operation on the current connection.
+
+65/db.resetError(): Resets the error state of the current connection.
+
+66/db.getMongo(): Retrieves a reference to the connected MongoDB instance.
+
+67/db.getMongo().setReadPref(<mode>, <tags>): Sets the read preference mode and tag sets for queries on the current connection.
+
+68/db.getMongo().setSlaveOk(<value>): Sets whether read queries are allowed to be performed on secondary nodes in a replica set.
+
+69db.getMongo().setWriteConcern(<write_concern>): Sets the write concern for the current connection.
+
+70/db.logout(): Logs out the current authenticated user from the database.
+
+71/db.repairDatabase(): Repairs the current database, which can help recover storage space and fix corrupted data. This command should be used with caution, as it may block other operations.
+
+72/db.cloneDatabase(<from_host>): Clones the current database from another MongoDB server.
+
+73/db.<collection_name>.validate(<options>): Validates the structure of the specified collection and its indexes, returning a detailed report.
+
+74/db.<collection_name>.getShardVersion(): Retrieves the shard version of the specified collection in a sharded cluster.
+
+75db.<collection_name>.getShardDistribution(): Displays information about the shard distribution for the specified collection in a sharded cluster.
+///////////////////////////////////////////////////////////////
+76/db.getMongo().getDBs(): Retrieves the list of all databases on the connected MongoDB instance.
+
+77/db.getMongo().setLogLevel(<level>, <component>): Sets the log level for the current connection or a specific component.
+
+78/db.getMongo().getLogComponents(): Retrieves a list of available log components in the MongoDB server.
+
+79/db.currentOp(<options>): Displays information about in-progress operations on the MongoDB server.
+
+80/db.killOp(<operation_id>): Terminates an in-progress operation using its operation ID.
+
+81/db.fsyncLock(): Locks the MongoDB server for writes and flushes all data to disk. This command is useful when backing up the data on a standalone server.
+
+82/db.fsyncUnlock(): Unlocks the MongoDB server previously locked with the db.fsyncLock() command.
+
+83/db.hostInfo(): Retrieves information about the system hosting the MongoDB server, such as the operating system and hardware.
+
+84/db.serverBuildInfo(): Retrieves information about the MongoDB server build, such as version and build environment.
+
+85/db.serverStatus(<options>): Retrieves a comprehensive report on the status of the MongoDB server, including memory usage, connection counts, and operation counts.
+
+86/db.getReplicationInfo(): Retrieves information about the replication process in a replica set.
+
+87/db.printSlaveReplicationInfo(): Displays the replication lag between primary and secondary nodes in a replica set.
+
+88/db.addUser(<user>): Adds a user to the current database with the specified authentication and authorization settings. Note that this command is deprecated in favor of db.createUser().
+
+89/db.removeUser(<username>): Removes a user from the current database. Note that this command is deprecated in favor of db.dropUser().
+
+90/db.shutdownServer(): Shuts down the MongoDB server, terminating all client connections.
+ààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààà
+ààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààà
+àààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààà
+.insertMany    .find()    .find({$or}      .distinct("....")          .updateMany({".......": "Li brina nbadlo"},{$set: {"......": "9ima jdida"}});  db.stagiaires.updateMany({ "Modules.titre": "GD" },{ "$set": { "Modules.$.titre": "Gestion de Données" } })
+
+db.Personnes.deletMany({"....":{$exists: false}})
+db.stagiaires.find({ "age": { $lte: 25 } },  { "nom": 1, "sexe": 1, "filière": 1 })
+db.etudiants.insertMany([         
+           
+function count ....
+db.etudiants.countDocuments({"..................": {$exists: true}});
+db.etudiants.aggregate({"$project":{_id:1,N:{$size:"$........"}}})
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+caractéristiques générales des bases Nosql:
+1/Schéma flexible: Les bases de données NoSQL n'ont pas de schéma fixe, ce qui permet de stocker et de gérer des données avec des structures différentes, facilitant ainsi l'évolution des applications et la gestion de données hétérogènes.
+
+2/Scalabilité horizontale: Contrairement aux bases de données SQL traditionnelles, qui sont généralement mises à l'échelle verticalement en ajoutant plus de ressources à un seul serveur, les bases de données NoSQL sont conçues pour être mises à l'échelle horizontalement en ajoutant de nouveaux nœuds ou serveurs au cluster. Cela permet une meilleure répartition de la charge et une croissance linéaire.
+
+3/Haute disponibilité et tolérance aux pannes: Les bases de données NoSQL utilisent souvent des techniques de réplication et de partitionnement pour assurer une haute disponibilité et une tolérance aux pannes, permettant aux systèmes de continuer à fonctionner même en cas de défaillance d'un ou plusieurs nœuds.
+
+4/Performances: Les bases de données NoSQL sont optimisées pour les opérations de lecture et d'écriture rapides, en particulier pour les requêtes simples et les opérations sur de grands volumes de données. Elles peuvent offrir de meilleures performances que les bases de données relationnelles pour certaines tâches spécifiques.
+
+5/Types de bases de données NoSQL: Il existe plusieurs types de bases de données NoSQL, dont les principales catégories sont les bases de données clé-valeur, les bases de données orientées colonnes, les bases de données orientées documents et les bases de données orientées graphe. Chacune de ces catégories a ses propres forces et faiblesses, et est adaptée à des cas d'utilisation spécifiques.
